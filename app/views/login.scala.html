@@ -1,0 +1,40 @@
+@*
+* Created by Anton Fagerberg.
+* anton@antonfagerberg.com | www.antonfagerberg.com
+*@
+@(form: Form[(String, String)])(implicit flash: Flash)
+
+@main {
+    @helper.form(routes.Application.login()) {
+        <h1>Sign in</h1>
+
+        @if(form.hasGlobalErrors) {
+            <p>Username and/or password not valid!</p>
+        }
+
+        @for(message <- flash.get("message")) {
+            <p style="font-weight: bold;">@message</p>
+        }
+
+        @for(message <- flash.get("warning")) {
+            <p style="font-weight: bold;">Warning: @message</p>
+        }
+
+        <input
+            type="text"
+            name="email"
+            autocomplete="off"
+            @if(form.error("email").isDefined) { style="border: 1px solid red;" }
+            value="@form("email").value"
+        />
+        <input
+            type="password"
+            name="password"
+            @if(form.error("password").isDefined) { style="border: 1px solid red;" }
+        />
+        <input
+            type="submit"
+            value="Sign in"
+        >
+    }
+}
