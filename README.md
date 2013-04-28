@@ -1,14 +1,14 @@
 # User Boilerplate for Play Framework & Scala
 Boilerplate code for pages which requires user management. This code is mainly for my own benefit but it should be easy to adapt for any purpose. There is no license, use it as you like.
 
-This code provides:
+### This code provides:
  * Model for User creation, authentication & verification.
  * Authenticated requests with default or custom verification methods.
  * Controller for signing in and out.
  * Example form to validate user credentials.
  * Example session creation and verification.
 
-By default this code:
+### By default this code:
  * Uses MySQL databases. (SQL-code included in evolutions)
  * hashes passwords using PBKDF2 with HMAC SHA1.
  * Stores email in the session cookie as the unique key.
