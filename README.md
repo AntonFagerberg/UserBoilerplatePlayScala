@@ -10,7 +10,7 @@ Boilerplate code for pages which requires user management. This code is mainly f
 
 ### By default this code:
  * Uses MySQL databases. (SQL-code included in evolutions)
- * hashes passwords using PBKDF2 with HMAC SHA1.
+ * Hashes passwords using PBKDF2 with HMAC SHA1.
  * Stores email in the session cookie as the unique key.
  * Targets Play 2.1.1.
 
